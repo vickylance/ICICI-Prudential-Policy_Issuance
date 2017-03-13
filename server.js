@@ -41,33 +41,36 @@ server.post('/api/messages', connector.listen());
 // //#endregion Console Connector
 
 
-// Create bot root dialog
-// bot.dialog('/', luisDialog);
+Create bot root dialog
+bot.dialog('/', luisDialog);
 
-// //App 1
-// luisDialog.matches('None', builder.DialogAction.send(sourceFile.None));
-// luisDialog.matches('PolicyIssuance_Misplace', builder.DialogAction.send(sourceFile.PolicyIssuance_Misplace));
+//App 1
+luisDialog.matches('None', builder.DialogAction.send(sourceFile.None));
+luisDialog.matches('PolicyIssuance_Misplace', builder.DialogAction.send(sourceFile.PolicyIssuance_Misplace));
 // luisDialog.matches('PolicyIssuance_FreeLookPeriod', builder.DialogAction.send(sourceFile.PolicyIssuance_FreeLookPeriod));
-// luisDialog.matches('PolicyIssuance_CancelFreeLookAmountBack', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLookAmountBack));
-// luisDialog.matches('PolicyIssuance_CancelFreeLook', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLook));
-// luisDialog.matches('PolicyIssuance_TrackPolicy', builder.DialogAction.send(sourceFile.PolicyIssuance_TrackPolicy));
-// luisDialog.matches('PolicyIssuance_PayPremium', builder.DialogAction.send(sourceFile.PolicyIssuance_PayPremium));
-// luisDialog.matches('PolicyIssuance_CheckPaidPremium', builder.DialogAction.send(sourceFile.PolicyIssuance_CheckPaidPremium));
-// luisDialog.matches('PolicyIssuance_ReviveUnPaidPolicy', builder.DialogAction.send(sourceFile.PolicyIssuance_ReviveUnPaidPolicy));
-// luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinuedDefine', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinuedDefine));
-// luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinued', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinued));
-// luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinuedRevive', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinuedRevive));
+luisDialog.matches('PolicyIssuance_FreeLookPeriod', builder.Dialog.begin(session){
+    session.send(sourceFile.PolicyIssuance_FreeLookPeriod)
+};
+luisDialog.matches('PolicyIssuance_CancelFreeLookAmountBack', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLookAmountBack));
+luisDialog.matches('PolicyIssuance_CancelFreeLook', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLook));
+luisDialog.matches('PolicyIssuance_TrackPolicy', builder.DialogAction.send(sourceFile.PolicyIssuance_TrackPolicy));
+luisDialog.matches('PolicyIssuance_PayPremium', builder.DialogAction.send(sourceFile.PolicyIssuance_PayPremium));
+luisDialog.matches('PolicyIssuance_CheckPaidPremium', builder.DialogAction.send(sourceFile.PolicyIssuance_CheckPaidPremium));
+luisDialog.matches('PolicyIssuance_ReviveUnPaidPolicy', builder.DialogAction.send(sourceFile.PolicyIssuance_ReviveUnPaidPolicy));
+luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinuedDefine', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinuedDefine));
+luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinued', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinued));
+luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinuedRevive', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinuedRevive));
 
-String.prototype.contains = function(content){
-  return this.indexOf(content) !== -1;
-}
+// String.prototype.contains = function(content){
+//   return this.indexOf(content) !== -1;
+// }
 
-bot.dialog('/', function (session) {
-    if(session.message.text.toLowerCase().contains('hello')){
-      session.send('Hey, How are you? yolo');
-      }else if(session.message.text.toLowerCase().contains('help')){
-        session.send('How can I help you?');
-      }else{
-        session.send('Sorry I don\'t understand you...');
-      }
-});
+// bot.dialog('/', function (session) {
+//     if(session.message.text.toLowerCase().contains('hello')){
+//       session.send('Hey, How are you? yolo');
+//       }else if(session.message.text.toLowerCase().contains('help')){
+//         session.send('How can I help you?');
+//       }else{
+//         session.send('Sorry I don\'t understand you...');
+//       }
+// });
