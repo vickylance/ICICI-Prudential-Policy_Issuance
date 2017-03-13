@@ -50,7 +50,7 @@ luisDialog.matches('PolicyIssuance_Misplace', builder.DialogAction.send(sourceFi
 // luisDialog.matches('PolicyIssuance_FreeLookPeriod', builder.DialogAction.send(sourceFile.PolicyIssuance_FreeLookPeriod));
 luisDialog.matches('PolicyIssuance_FreeLookPeriod', builder.Dialog.begin(session){
     session.send(sourceFile.PolicyIssuance_FreeLookPeriod + ' yol')
-};
+});
 luisDialog.matches('PolicyIssuance_CancelFreeLookAmountBack', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLookAmountBack));
 luisDialog.matches('PolicyIssuance_CancelFreeLook', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLook));
 luisDialog.matches('PolicyIssuance_TrackPolicy', builder.DialogAction.send(sourceFile.PolicyIssuance_TrackPolicy));
