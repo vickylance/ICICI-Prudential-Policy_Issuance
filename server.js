@@ -47,8 +47,8 @@ bot.dialog('/', luisDialog);
 //App 1
 luisDialog.matches('None', builder.DialogAction.send(sourceFile.None));
 luisDialog.matches('PolicyIssuance_Misplace', builder.DialogAction.send(sourceFile.PolicyIssuance_Misplace));
-// luisDialog.matches('PolicyIssuance_FreeLookPeriod', builder.DialogAction.send(sourceFile.PolicyIssuance_FreeLookPeriod));
-luisDialog.matches('PolicyIssuance_FreeLookPeriod', builder.Dialog.begin(session.send(sourceFile.PolicyIssuance_FreeLookPeriod + ' yol')));
+luisDialog.matches('PolicyIssuance_FreeLookPeriod', builder.DialogAction.send(sourceFile.PolicyIssuance_FreeLookPeriod));
+// luisDialog.matches('PolicyIssuance_FreeLookPeriod', builder.Dialog.begin(session.send(sourceFile.PolicyIssuance_FreeLookPeriod + ' yol')));
 luisDialog.matches('PolicyIssuance_CancelFreeLookAmountBack', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLookAmountBack));
 luisDialog.matches('PolicyIssuance_CancelFreeLook', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLook));
 luisDialog.matches('PolicyIssuance_TrackPolicy', builder.DialogAction.send(sourceFile.PolicyIssuance_TrackPolicy));
