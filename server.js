@@ -57,26 +57,7 @@ server.post('/api/messages', connector.listen());
 // luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinuedDefine', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinuedDefine));
 // luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinued', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinued));
 // luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinuedRevive', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinuedRevive));
-//Bot on
-bot.on('contactRelationUpdate', function (message) {
-    if (message.action === 'add') {
-        var name = message.user ? message.user.name : null;
-        var reply = new builder.Message()
-                .address(message.address)
-                .text("Hello %s... Thanks for adding me. Say 'hello' to see some great demos.", name || 'there');
-        bot.send(reply);
-    } else {
-        // delete their data
-    }
-});
 
-bot.on('typing', function (message) {
-  // User is typing
-});
-
-bot.on('deleteUserData', function (message) {
-    // User asked to delete their data
-});
 String.prototype.contains = function(content){
   return this.indexOf(content) !== -1;
 }
