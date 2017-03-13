@@ -4,7 +4,7 @@ var sourceFile = require('./sourceFile');
 
 //luis ai app model for CTD-TN-ChatBot
 var recognizer = new builder.LuisRecognizer('https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/1bc09642-7148-4ef9-b488-1111c17e87b5?subscription-key=d4ceb0047f654efeb70283e87a351c94&verbose=true');
-var dialog = new builder.IntentDialog({
+var luisDialog = new builder.IntentDialog({
     recognizers: [recognizer]
 });
 
@@ -42,18 +42,18 @@ server.post('/api/messages', connector.listen());
 
 
 // Create bot root dialog
-bot.dialog('/', dialog);
+bot.dialog('/', luisDialog);
 
 //App 1
-dialog.matches('None', builder.DialogAction.send(sourceFile.None));
-dialog.matches('PolicyIssuance_Misplace', builder.DialogAction.send(sourceFile.PolicyIssuance_Misplace));
-dialog.matches('PolicyIssuance_FreeLookPeriod', builder.DialogAction.send(sourceFile.PolicyIssuance_FreeLookPeriod));
-dialog.matches('PolicyIssuance_CancelFreeLookAmountBack', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLookAmountBack));
-dialog.matches('PolicyIssuance_CancelFreeLook', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLook));
-dialog.matches('PolicyIssuance_TrackPolicy', builder.DialogAction.send(sourceFile.PolicyIssuance_TrackPolicy));
-dialog.matches('PolicyIssuance_PayPremium', builder.DialogAction.send(sourceFile.PolicyIssuance_PayPremium));
-dialog.matches('PolicyIssuance_CheckPaidPremium', builder.DialogAction.send(sourceFile.PolicyIssuance_CheckPaidPremium));
-dialog.matches('PolicyIssuance_ReviveUnPaidPolicy', builder.DialogAction.send(sourceFile.PolicyIssuance_ReviveUnPaidPolicy));
-dialog.matches('PolicyIssuance_PolicyLapseDiscontinuedDefine', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinuedDefine));
-dialog.matches('PolicyIssuance_PolicyLapseDiscontinued', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinued));
-dialog.matches('PolicyIssuance_PolicyLapseDiscontinuedRevive', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinuedRevive));
+luisDialog.matches('None', builder.DialogAction.send(sourceFile.None));
+luisDialog.matches('PolicyIssuance_Misplace', builder.DialogAction.send(sourceFile.PolicyIssuance_Misplace));
+luisDialog.matches('PolicyIssuance_FreeLookPeriod', builder.DialogAction.send(sourceFile.PolicyIssuance_FreeLookPeriod));
+luisDialog.matches('PolicyIssuance_CancelFreeLookAmountBack', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLookAmountBack));
+luisDialog.matches('PolicyIssuance_CancelFreeLook', builder.DialogAction.send(sourceFile.PolicyIssuance_CancelFreeLook));
+luisDialog.matches('PolicyIssuance_TrackPolicy', builder.DialogAction.send(sourceFile.PolicyIssuance_TrackPolicy));
+luisDialog.matches('PolicyIssuance_PayPremium', builder.DialogAction.send(sourceFile.PolicyIssuance_PayPremium));
+luisDialog.matches('PolicyIssuance_CheckPaidPremium', builder.DialogAction.send(sourceFile.PolicyIssuance_CheckPaidPremium));
+luisDialog.matches('PolicyIssuance_ReviveUnPaidPolicy', builder.DialogAction.send(sourceFile.PolicyIssuance_ReviveUnPaidPolicy));
+luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinuedDefine', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinuedDefine));
+luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinued', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinued));
+luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinuedRevive', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinuedRevive));
