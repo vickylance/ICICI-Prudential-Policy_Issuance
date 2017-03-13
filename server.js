@@ -81,7 +81,7 @@ String.prototype.contains = function(content){
   return this.indexOf(content) !== -1;
 }
 
-bot.dialog('hi', function (session) {
+bot.dialog('/', function (session) {
     if(session.message.text.toLowerCase().contains('hello')){
       session.send(`Hey, How are you?`);
       }else if(session.message.text.toLowerCase().contains('help')){
