@@ -58,3 +58,20 @@ luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinuedDefine', builder.Dialo
 luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinued', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinued));
 luisDialog.matches('PolicyIssuance_PolicyLapseDiscontinuedRevive', builder.DialogAction.send(sourceFile.PolicyIssuance_PolicyLapseDiscontinuedRevive));
 
+// String.prototype.contains = function(content){
+//   return this.indexOf(content) !== -1;
+// }
+
+// bot.dialog('/', function (session) {
+//     if(session.message.text.toLowerCase().contains('hello')){
+//       session.send('Hey, How are you? yolo');
+//       }else if(session.message.text.toLowerCase().contains('help')){
+//         session.send('How can I help you?');
+//       }else{
+//         session.send('Sorry I don\'t understand you...');
+//       }
+// });
+
+
+
+// luisDialog.matches('PolicyIssuance_FreeLookPeriod', builder.Dialog.begin(session.send(sourceFile.PolicyIssuance_FreeLookPeriod + ' yol')));
